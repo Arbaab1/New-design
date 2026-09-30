@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodies Park | Authentic Arabian Mandi & Tandoori - Darbhanga</title>
+    <!-- Premium Fonts matching reference video -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0b0b0d;
+            --bg-card: #141417;
+            --bg-card-hover: #1c1c22;
+            --accent-gold: #e5a93c;
+            --accent-orange: #d96b27;
+            --text-light: #f8f8fa;
+            --text-muted: #a0a0ab;
+            --border-color: rgba(229, 169, 60, 0.2);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 11, 13, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-badge {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1.5px solid var(--accent-gold);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover { color: var(--accent-gold); }
+
+        .btn-gallery-nav {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-gallery-nav:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 90px;
+            background: linear-gradient(to bottom, rgba(11, 11, 13, 0.65), rgba(11, 11, 13, 0.95)), url('image10.jpg') center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding: 40px 0;
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.8rem, 6.5vw, 4.8rem);
+            line-height: 1.05;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-title span {
+            color: var(--accent-gold);
+            font-style: italic;
+            font-weight: 600;
+            display: block;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            font-weight: 300;
+            max-width: 550px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-gold));
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(217, 107, 39, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 107, 39, 0.5);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            transition: border-color 0.3s, background 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-gold);
+            background: rgba(229, 169, 60, 0.1);
+        }
+
+        /* Online Ordering Banner */
+        .online-delivery {
+            padding: 25px 0;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .delivery-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .delivery-text {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+        }
+
+        .partner-btn {
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #cb202d;
+            color: #fff;
+            transition: transform 0.2s;
+        }
+
+        .partner-btn:hover { transform: scale(1.03); }
+
+        /* Highlights Grid */
+        .features {
+            padding: 70px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-icon {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            padding: 9px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+            color: #fff;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 18px;
+        }
+
+        .menu-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-info h4 {
+            font-size: 1rem;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .item-category {
+            font-size: 0.72rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .item-price {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 1.05rem;
+            white-space: nowrap;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 90px 0;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 240px;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            background: #000;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: var(--accent-gold);
+            font-size: 2rem;
+        }
+
+        /* Location Section */
+        .location-section {
+            padding: 90px 0;
+        }
+
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .location-container { grid-template-columns: 1fr; }
+        }
+
+        .map-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px 25px;
+            text-align: center;
+        }
+
+        .map-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .map-box p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #060608;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-heading);
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p, .footer-col li {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--accent-gold);
+            color: #000;
+            border-color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        /* Lightbox Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal img {
+            max-width: 95%;
+            max-height: 85vh;
+            border-radius: 8px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-badge">FP</div>
+                <div class="logo-text">FOODIES PARK</div>
+            </a>
+            <nav class="nav-links">
+                <a href="#menu" class="nav-link">MENU</a>
+                <a href="#gallery" class="btn-gallery-nav">VIEW GALLERY</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="location-tag">
+                    <i class="fa-solid fa-location-dot"></i> Darbhanga - Khan Chowk
+                </div>
+                <h1 class="hero-title">COME HUNGRY. <span>LEAVE GLOWING.</span></h1>
+                <p class="hero-subtitle">Authentic Arabian Mandi & Tandoori Specials, served with warmth in the heart of Darbhanga.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn-primary">Explore The Menu <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://maps.app.goo.gl/oXRbrFBCJ1YHeWfw5?g_st=ac" target="_blank" class="btn-secondary"><i class="fa-solid fa-compass"></i> Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zomato Delivery Partner -->
+    <section class="online-delivery">
+        <div class="container delivery-flex">
+            <div class="delivery-text">Order Online On Zomato</div>
+            <a href="https://www.zomato.com/darbhanga/foodies-park-darbhanga-locality/order" target="_blank" class="partner-btn"><i class="fa-solid fa-utensils"></i> Order On Zomato</a>
+        </div>
+    </section>
+
+    <!-- Highlights Grid -->
+    <section class="features">
+        <div class="container feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-fire-burner"></i></div>
+                <h3>Signature Mandi</h3>
+                <p>Authentic slow-cooked Arabian Mandi prepared with aromatic royal spices.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+                <h3>Made Fresh</h3>
+                <p>Every single dish prepared fresh to order using premium quality ingredients.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+                <h3>Come Together</h3>
+                <p>Spacious seating designed for big family dinners and grand celebrations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pick Your Mood</h2>
+                <p>From first bite to final cup — explore every Foodies Park favourite.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="category-tabs">
+                <button class="tab-btn active" onclick="filterMenu('all')">ALL</button>
+                <button class="tab-btn" onclick="filterMenu('starter')">STARTER</button>
+                <button class="tab-btn" onclick="filterMenu('mandi')">MANDI</button>
+                <button class="tab-btn" onclick="filterMenu('tandoor')">TANDOOR</button>
+                <button class="tab-btn" onclick="filterMenu('main')">MAIN COURSE</button>
+                <button class="tab-btn" onclick="filterMenu('rolls')">ROLLS & NOODLES</button>
+                <button class="tab-btn" onclick="filterMenu('fastfood')">FAST FOOD</button>
+                <button class="tab-btn" onclick="filterMenu('beverages')">BEVERAGES & DESSERT</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- JavaScript dynamically loads items here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (7 Images) -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>VIEW GALLERY</h2>
+                <p>A glimpse of our delicious food & vibrant dining ambience</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('gallery-1.jpg')">
+                    <img src="gallery-1.jpg" alt="Gallery 1">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                   <div class="gallery-item" onclick="openModal('gallery-2.jpg')">
+                    <img src="gallery-2.jpg" alt="Gallery 2">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openModal('gallery-3.jpg')">
+                    <img src="gallery-3.jpg" alt="Gallery 3">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openModal('gallery-4.jpg')">
+                    <img src="gallery-4.jpg" alt="Gallery 4">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openModal('gallery-5.jpg')">
+                    <img src="gallery-5.jpg" alt="Gallery 5">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openModal('gallery-6.jpg')">
+                    <img src="gallery-6.jpg" alt="Gallery 6">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+                <div class="gallery-item" onclick="openModal('gallery-7.jpg')">
+                    <img src="gallery-7.jpg" alt="Gallery 7">
+                    <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section" id="location">
+        <div class="container location-container">
+            <div>
+                <span class="location-tag">Find Your Way To The Park</span>
+                <h2 style="font-family: var(--font-heading); font-size: 2.4rem; margin-bottom: 15px;">Khan Chowk, Darbhanga</h2>
+                <p style="color: var(--text-muted); margin-bottom: 25px;">Visit us with your friends & family for an unforgettable dining experience.</p>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://maps.app.goo.gl/oXRbrFBCJ1YHeWfw5?g_st=ac" target="_blank" class="btn-primary"><i class="fa-solid fa-map-location-dot"></i> Open Directions</a>
+                    <a href="tel:6272357469" class="btn-secondary"><i class="fa-solid fa-phone"></i> Call 6272357469</a>
+                </div>
+            </div>
+            <div class="map-box">
+                <i class="fa-solid fa-store" style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 15px;"></i>
+                <h3>Foodies Park</h3>
+                <p>Khan Chowk, Darbhanga, Bihar</p>
+                <a href="tel:6272357469" class="btn-primary" style="margin: 0 auto; display: inline-flex;"><i class="fa-solid fa-phone"></i> Call For Booking</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 15px;">
+                        <div class="logo-badge">FP</div>
+                        <div class="logo-text">FOODIES PARK</div>
+                    </div>
+                    <p>Authentic Arabian Mandi, Tandoori & Mughlai Specials served in Darbhanga.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-phone" style="color:var(--accent-gold); margin-right:8px;"></i> <a href="tel:6272357469">6272357469</a></li>
+                        <li><i class="fa-solid fa-location-dot" style="color:var(--accent-gold); margin-right:8px;"></i> Khan Chowk, Darbhanga</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <p>Connect with us on our official social handles:</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/foodies._.park/?utm_source=ig_web_button_share_sheet" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com/@hamidhasan-u9w?si=-yBNczHz5_fovBeO" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="tel:6272357469" class="social-icon"><i class="fa-solid fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Foodies Park Darbhanga. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div class="modal" id="imgModal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img id="modalImg" src="" alt="Gallery Preview">
+    </div>
+
+    <!-- Script -->
+    <script>
+        // Exact Menu Database from Official PDF Menu
+        const menuData = [
+            // Starter
+            { name: "Chicken 65", price: "₹249", cat: "starter" },
+            { name: "Chicken Chilli (Dry / Gravy)", price: "₹249", cat: "starter" },
+            { name: "Chicken Manchurian", price: "₹279", cat: "starter" },
+            { name: "Paneer Chilli", price: "₹260", cat: "starter" },
+            { name: "Paneer 65", price: "₹265", cat: "starter" },
+            { name: "Chicken Lollipop", price: "₹299", cat: "starter" },
+            { name: "Drums Of Heaven", price: "₹319", cat: "starter" },
+            { name: "Chicken Pakoda", price: "₹249 / ₹499", cat: "starter" },
+
+            // Mandi
+            { name: "Chicken Mandi", price: "₹529 / ₹999", cat: "mandi" },
+            { name: "Chicken Juicy Mandi", price: "₹549 / ₹1049", cat: "mandi" },
+            { name: "Mutton Mandi", price: "₹699 / ₹1349", cat: "mandi" },
+            { name: "Mutton Juicy Mandi", price: "₹749 / ₹1449", cat: "mandi" },
+            { name: "Al-Faham Mandi", price: "₹999", cat: "mandi" },
+
+            // Tandoor
+            { name: "Tandoori Chicken", price: "₹220 / ₹430", cat: "tandoor" },
+            { name: "Chicken Tikka", price: "₹399", cat: "tandoor" },
+            { name: "Afghani Chicken", price: "₹239 / ₹469", cat: "tandoor" },
+            { name: "Paneer Tikka Shashlik", price: "₹349", cat: "tandoor" },
+            { name: "Tangri Kebab", price: "₹249 / ₹499", cat: "tandoor" },
+
+            // Main Course
+            { name: "Butter Chicken", price: "₹340 / ₹680", cat: "main" },
+            { name: "Butter Chicken Boneless", price: "₹375 / ₹745", cat: "main" },
+            { name: "Chicken Handi", price: "₹349 / ₹699", cat: "main" },
+            { name: "Mutton Kadhai", price: "₹379 / ₹759", cat: "main" },
+            { name: "Mutton Roghan Josh", price: "₹399 / ₹799", cat: "main" },
+            { name: "Paneer Butter Masala", price: "₹265", cat: "main" },
+
+            // Rolls & Noodles
+            { name: "Chicken Shawarma", price: "₹99", cat: "rolls" },
+            { name: "Chicken Tikka Roll", price: "₹119", cat: "rolls" },
+            { name: "Veg Noodles", price: "₹129", cat: "rolls" },
+            { name: "Chicken Noodles", price: "₹169", cat: "rolls" },
+
+            // Fast Food
+            { name: "French Fries", price: "₹99", cat: "fastfood" },
+            { name: "Veg Burger", price: "₹69", cat: "fastfood" },
+            { name: "Chicken Burger", price: "₹99", cat: "fastfood" },
+            { name: "Veg Pizza", price: "₹99 / ₹149 / ₹199", cat: "fastfood" },
+            { name: "Chicken Pizza", price: "₹129 / ₹219 / ₹289", cat: "fastfood" },
+
+            // Beverages & Dessert
+            { name: "Blue Lagoon", price: "₹109", cat: "beverages" },
+            { name: "Mint Mojito", price: "₹109", cat: "beverages" },
+            { name: "Strawberry Shake", price: "₹149", cat: "beverages" },
+            { name: "Kit Kat Shake", price: "₹159", cat: "beverages" },
+            { name: "Gulab Jamun", price: "₹49", cat: "beverages" },
+            { name: "Rabdi", price: "₹55", cat: "beverages" }
+        ];
+
+        function renderMenu(items) {
+            const grid = document.getElementById("menuGrid");
+            grid.innerHTML = items.map(item => `
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>${item.name}</h4>
+                        <span class="item-category">${item.cat}</span>
+                    </div>
+                    <div class="item-price">${item.price}</div>
+                </div>
+            `).join('');
+        }
+
+        function filterMenu(category) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (category === 'all') {
+                renderMenu(menuData);
+            } else {
+                const filtered = menuData.filter(item => item.cat === category);
+                renderMenu(filtered);
+            }
+        }
+
+        function openModal(imgSrc) {
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('imgModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('imgModal').style.display = 'none';
+        }
+
+        renderMenu(menuData);
+    </script>
+</body>
+</html>
